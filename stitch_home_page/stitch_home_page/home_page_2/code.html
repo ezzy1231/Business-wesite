@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Services - Intelligent Solutions</title>
+<meta content="Explore the range of expert services offered by Intelligent Solutions, including strategy consulting, data analytics, and custom software development designed to elevate your business." name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#135bec",
+            "background-light": "#f8f9fa",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .link-underline {
+      position: relative;
+      display: inline-block;
+    }
+    .link-underline::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: currentColor;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .link-underline:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }.scroll-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background-color: #135bec;
+      width: 0%;
+      z-index: 100;
+      transition: width 0.1s linear;
+    }
+  </style>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Dark mode toggle
+      const toggleButtons = document.querySelectorAll('.theme-toggle-button');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const savedTheme = localStorage.getItem('theme');
+      const setTheme = (isDark) => {
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+          toggleButtons.forEach(btn => btn.querySelector('.material-symbols-outlined').textContent = 'light_mode');
+        } else {
+          document.documentElement.classList.remove('dark');
+          toggleButtons.forEach(btn => btn.querySelector('.material-symbols-outlined').textContent = 'dark_mode');
+        }
+      };
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        setTheme(true);
+      } else {
+        setTheme(false);
+      }
+      toggleButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          setTheme(isDark);
+        });
+      });
+      // Scroll progress bar
+      const progressBar = document.getElementById('scroll-progress');
+      const updateProgressBar = () => {
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
+        progressBar.style.width = `${scrollPercent}%`;
+      };
+      window.addEventListener('scroll', updateProgressBar);
+    });
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200 antialiased">
+<div class="scroll-progress-bar" id="scroll-progress"></div>
+<div class="relative w-full overflow-x-hidden">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200/80 dark:border-gray-800/80 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm px-4 sm:px-8 md:px-10 py-3">
+<a aria-label="Intelligent Solutions Home" class="flex items-center gap-4 text-gray-900 dark:text-white" href="#">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Intelligent Solutions</h2>
+</a>
+<nav aria-label="Main navigation" class="hidden lg:flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal text-primary dark:text-primary link-underline" href="#">Services</a>
+<a class="text-sm font-medium leading-normal text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors link-underline" href="#">About Us</a>
+<a class="text-sm font-medium leading-normal text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors link-underline" href="#">Resources</a>
+<a class="text-sm font-medium leading-normal text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors link-underline" href="#">Contact</a>
+</div>
+<button aria-label="Toggle dark mode" class="theme-toggle-button flex items-center justify-center size-10 rounded-full text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50" type="button">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark" href="#">
+<span class="truncate">Request a Demo</span>
+</a>
+</nav>
+<div class="flex items-center gap-2 lg:hidden">
+<button aria-label="Toggle dark mode" class="theme-toggle-button flex items-center justify-center p-2 rounded-md text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" type="button">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<button aria-label="Open menu" class="p-2 rounded-md text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="w-full">
+<section class="text-center py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">
+<div class="max-w-4xl mx-auto">
+<h1 class="text-gray-900 dark:text-white text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tighter">Our Comprehensive Services</h1>
+<p class="mt-4 text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+      From strategic consulting to custom software development, we provide tailored solutions to drive your business forward.
+    </p>
+</div>
+</section>
+<section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800/80 bg-white dark:bg-background-dark p-6 transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-primary/10 hover:-translate-y-2 group">
+<div class="relative mb-4">
+<img alt="Two professionals collaborating on a strategic plan on a glass board." class="w-full h-48 object-cover rounded-lg" height="192" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK_ksTcW79lyrFLWCPYbgGC5iuj52Otg4AYhbIfOjNbwuwL7psuFaqp6SJLevXR-XVm5qVq4QNzQQR4lifHqFZvbM2JEC4dyPAElBgm3Fis6Lb8tXWVWkdOuY-o9c3Her0cJD5WCbvbaE9RRPwZUPerUSHRQBmGa9zt2guVgWwoTfHcqJwFpwB83pOfaPUU6WwC4rxZBiTen0nGIoqvVBD6BlMsW54IQXufx8QJWDAC1soT-6BQH74qypavst2hT-4s9lT2sAPBMHh" width="300"/>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Strategy Consulting</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+        We help you craft winning strategies by analyzing market trends, identifying opportunities, and defining a clear roadmap for sustainable growth.
+      </p>
+<a class="font-semibold text-primary inline-flex items-center group-hover:underline" href="#">
+        Learn More <span class="material-symbols-outlined ml-1 transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800/80 bg-white dark:bg-background-dark p-6 transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-primary/10 hover:-translate-y-2 group">
+<div class="relative mb-4">
+<img alt="A computer screen showing complex data visualizations and analytics dashboards." class="w-full h-48 object-cover rounded-lg" height="192" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJGRDe1R9WSVlmUeNOETWG087Y_Ivw8jEFLjiRlJHURoDFVs7BgSZT82qFoKuwWymFIh4ocI-nJ_UND0pb9CvxtwtpaB1BGF37dqZMzRz6QH-diJ8ccZ6ZCAdEuZXwsEM9iUbj9x9Ny_nemPinuPy-N1ohAF1RpEigGAeYtw_Egu5kLor-J81KuVTRDEeRUhxQgYGwGAWTcxv-p4AQmKmxZZhbSE33xy8B8v7onvKtGcTl1vt4xb4HKqz6BZVjgfVMIvZdaAmoapVk" width="300"/>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Data Analytics</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+        Leverage the power of your data. Our experts transform raw information into actionable insights that drive smarter, data-informed decisions.
+      </p>
+<a class="font-semibold text-primary inline-flex items-center group-hover:underline" href="#">
+        Learn More <span class="material-symbols-outlined ml-1 transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800/80 bg-white dark:bg-background-dark p-6 transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-primary/10 hover:-translate-y-2 group">
+<div class="relative mb-4">
+<img alt="A developer's desk with multiple monitors displaying lines of code." class="w-full h-48 object-cover rounded-lg" height="192" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa3nBYsQbZ35fvztyvnznWs9EDoxP68HQsiuuSJWfJXo-L7ze6UjZha1Bq4pclNvNeyppaumT1ghHZUCQJaYbLzoUMewRZZkX6Byu2WoeV3FFtV9Dz6ugWal9MSC0IpHeZbPKAUJN1e3oQW9oipdwADKNPNtqWop7T8AN-OyiexpRsaXpB0LzNqyxw6PLUwwtcUa-PVtv1Jw8PSBFv1k_TaPE1gERaT2UhT5KfAvMvPRIAKtr2cM5-cvms6W6JQHbadhnktCZw3SH_" width="300"/>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Software Development</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+        From web applications to mobile solutions, we build robust, scalable, and secure software tailored to your specific business requirements.
+      </p>
+<a class="font-semibold text-primary inline-flex items-center group-hover:underline" href="#">
+        Learn More <span class="material-symbols-outlined ml-1 transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800/80 bg-white dark:bg-background-dark p-6 transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-primary/10 hover:-translate-y-2 group">
+<div class="relative mb-4">
+<img alt="Abstract digital art representing cloud infrastructure and networking." class="w-full h-48 object-cover rounded-lg" height="192" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQzVIEZKLerZjCPD3_2fs4Mtle1OHH3SO2TX_6O7okAILbFo3jmsL9ROy_D0pUpiK6NkkKG6V-9T4feb1AAkS0Wfhix0B_Hiokn-myKvmXz9xNA8YNTIzDJmr16YZv6mmrdp50xbktSG5wFqxygQGZ4Ru6Bp61AcJ-FQ9yNvu8Y_nZeO1qNndDIBCmpZZgZfa297JG55HOpZpCH8Q20pJND-pLXcJwaDKduhQ0BjpHAKgyoMV920J5fMDxtaiDKCX8O3mrZTOSJzit" width="300"/>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Cloud Solutions</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+        Optimize your infrastructure with our cloud services. We offer migration, management, and security solutions for a flexible and efficient IT environment.
+      </p>
+<a class="font-semibold text-primary inline-flex items-center group-hover:underline" href="#">
+        Learn More <span class="material-symbols-outlined ml-1 transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800/80 bg-white dark:bg-background-dark p-6 transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-primary/10 hover:-translate-y-2 group">
+<div class="relative mb-4">
+<img alt="A digital illustration of a shield protecting a network of connected devices." class="w-full h-48 object-cover rounded-lg" height="192" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh6atFKEhvhFV5jwwg0M5Gqx0uChfbSRoW-sT2T8E9-e3bX6Trd9MDkKMq4uGqQ7gPNGqoCNQ8ab_5o2UZKCPi5xwlUbJMfpYKsNwpU9ay8bKxazuatxAFUMbvQTwhcalJZkCk3wqk058YaAYVV2BqHrSczfWEA56_zCo85CuOlOI6zONHUmllKAgkFDg5ly5d7tYLSDfGc4AJ2f37vhaFlyGXUeAOfYhi7wFoBgCCBosuOWwrwEHnIXTgx7bEpEnOjfQ7MTaSPTsA" width="300"/>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Cybersecurity</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+        Protect your digital assets with our comprehensive cybersecurity services, including threat assessment, monitoring, and incident response.
+      </p>
+<a class="font-semibold text-primary inline-flex items-center group-hover:underline" href="#">
+        Learn More <span class="material-symbols-outlined ml-1 transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800/80 bg-white dark:bg-background-dark p-6 transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-primary/10 hover:-translate-y-2 group">
+<div class="relative mb-4">
+<img alt="An AI-powered robotic arm performing a delicate task with precision." class="w-full h-48 object-cover rounded-lg" height="192" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzEx1DkCwGV08_DFGzlQnG9w-isDE9d1FBYTPUGUmXzHrXXtvy1hfIlgAWaTafsbnEr3pEQk07MDSEDX235x506_gGyBZqHA3VeDtspqFI3HYfuwQeqNydjowr2IYoSP-d36Oinya4c2P2iimHOGOh6TKlRygARFlztEy1pCjZ6YTXxZpBwrWKjbJWQmAhJVeFOYp7I5VczBt1q8bcPt7Eh7Hh_xjhIyJKa3aM_GjxZRt9GCao6TB5neJQ31kunWB4aSWjOzgh99s5" width="300"/>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">AI &amp; Machine Learning</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+        Integrate artificial intelligence into your operations to automate processes, enhance customer experiences, and unlock new capabilities.
+      </p>
+<a class="font-semibold text-primary inline-flex items-center group-hover:underline" href="#">
+        Learn More <span class="material-symbols-outlined ml-1 transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-gray-50 dark:bg-gray-900/50 py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight">Ready to Innovate?</h2>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+      Partner with us to leverage cutting-edge technology and strategic insights. Let's build the future of your business together.
+    </p>
+<a class="mt-8 inline-flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-gray-50 dark:focus:ring-offset-gray-900/50" href="#">
+<span class="truncate">Get in Touch</span>
+</a>
+</div>
+</section>
+</main>
+<footer class="bg-gray-100 dark:bg-gray-900/50 border-t border-gray-200 dark:border-gray-800">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="col-span-2 md:col-span-1 flex flex-col gap-4">
+<a aria-label="Intelligent Solutions Home" class="flex items-center gap-2 text-gray-900 dark:text-white" href="#">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h3 class="text-md font-bold">Intelligent Solutions</h3>
+</a>
+<p class="text-sm text-gray-600 dark:text-gray-400">Innovating for a smarter future.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-sm text-gray-900 dark:text-white">Company</h4>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Careers</a>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Blog</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-sm text-gray-900 dark:text-white">Services</h4>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Consulting</a>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Analytics</a>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Development</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-sm text-gray-900 dark:text-white">Legal</h4>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+<p class="text-sm text-gray-500 dark:text-gray-400">© 2024 Intelligent Solutions. All rights reserved.</p>
+<div class="flex gap-4">
+<a aria-label="Follow us on X" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16">
+<path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"></path>
+</svg>
+</a>
+<a aria-label="Follow us on LinkedIn" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16">
+<path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.325 0-1.936.724-2.26 1.256h.016a2.517 2.517 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
